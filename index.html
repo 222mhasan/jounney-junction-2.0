@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>journey-junction-2.0</title>
+
+    <!-- tailwind cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- main css file -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
+
+    <!-- google fonts -->
+
+      <!-- Roboto -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet"
+      />
+
+      <!-- playwrite DK -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Playwrite+DK+Loopet:wght@100..400&display=swap"
+        rel="stylesheet"
+      />
+
+      <!-- Montserrat -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+DK+Loopet:wght@100..400&display=swap"
+        rel="stylesheet"
+      />
+
+    <!-- tailwind config file -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              Roboto: ["Roboto", "sans-serif"],
+              Playwrite: ["Playwrite DK Loopet", "cursive"],
+              Montserrat : ["Montserrat", "sans-serif"]
+            },
+          },
+        },
+      };
+    </script>
+
+
+  </head>
+  <body class="container mx-auto ">
+    <!-- navbar starts -->
+    <section>
+      <nav class="py-4 px-5 lg:px-24 flex justify-between items-center">
+          <div>
+            <img class="w-12" src="/images/logo.png" alt="">
+          </div>
+          <div class="md:hidden">
+            <button id="mobile-menu-button" class=" focus:outline-none">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+              </svg>
+            </button>
+          </div>
+
+          <!-- for mobile view  -->
+          <ul class="hidden md:flex lg:flex space-x-8 md:space-x-2 gap-5 font-semibold text-md ">
+              <li class="nav-item">
+                  <a href="#" class="nav-link px-3 py-2 lg:px-4">Destinations</a>
+              </li>
+              <li class="nav-item">
+                  <a href="#" class="nav-link px-3 py-2 lg:px-4">Hotels</a>
+              </li>
+              <li class="nav-item">
+                  <a href="#" class="nav-link px-3 py-2 lg:px-4">Flights</a>
+              </li>
+              <li class="nav-item">
+                  <a href="#" class="nav-link px-3 py-2 lg:px-4">Bookings</a>
+              </li>
+              <li class="nav-item">
+                  <a href="#" class="nav-link px-3 py-2 lg:px-4">Login</a>
+              </li>
+              <li class="nav-item">
+                  <a href="#" class="nav-link px-3 py-2 border-2 border-black rounded-md">Sign Up</a>
+              </li>
+              <li class="nav-item">
+                <select name="lang" id="lang">
+                  <option value="En">EN</option>
+                  <option value="Bn">BN</option>
+                </select>
+              </li>
+          </ul>
+      </nav>
+
+          <!-- for large screen -->
+          <ul id="mobile-menu" class="hidden md:hidden flex flex-col items-center space-y-4 mt-4 font-semibold">
+            <li class="nav-item">
+              <a href="#" class="nav-link px-3 py-2 lg:px-4">Destinations</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link px-3 py-2 lg:px-4">Hotels</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link px-3 py-2 lg:px-4">Flights</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link px-3 py-2 lg:px-4">Bookings</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link px-3 py-2 lg:px-4">Login</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link px-3 py-2 border-2 border-black rounded-md">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <select name="lang" id="lang">
+                <option value="En">EN</option>
+                <option value="Bn">BN</option>
+              </select>
+            </li>
+          </ul>
+  </section>
+    <!-- navbar ends -->
+
+    <!-- banner starts -->
+    <section class="mt-10">
+      <div class=" grid grid-cols-1 lg:grid-cols-2 place-content-center justify-around gap-10">
+
+        <!-- left side -->
+        <div class="order-2 lg:order-1 ml-1 lg:ml-[100px]">
+            <h3 class="font-Montserrat text-sm lg:text-md text-center lg:text-left uppercase text-[#E06750] font-bold">Best destinations around the world</h1>
+            <div class="text-[#171E4C] w-full mx-auto text-center  lg:text-left">
+
+                <h1 class="font-Playwrite text-3xl md:text-5xl lg:text-6xl font-bold mt-5">Travel, enjoy <br> and live a new <br> and full life</h1>
+            
+                <p class="max-w-80 md:max-w-xl lg:max-w-80 mx-auto lg:mx-0 text-justify px-2 mt-8 text-sm md:text-xl lg:text-sm text-[#5E6286] font-Montserrat font-semibold">Built Wicket longer admire do barton vanity itself do in it.
+                  Preferred to sportsmen it engrossed listening. Park gate 
+                  sell they west hard for the.
+              </p>
+
+            </div>
+            <div class="flex mt-7 items-center gap-7 mx-auto lg:mx-0 w-fit">
+                <div>
+                    <button class="bg-[#F1A501] text-sm text-white px-4 lg:px-5 py-2 lg:py-3 font-semibold rounded-lg"> Find out more</button>
+                </div>
+                <div class="flex font-semibold items-center gap-3 text-sm lg:text-md">
+                    <img class="w-10 drop-shadow-lg" src="images/Banner_image/play (1).png" alt="">
+                    <p>Play Demo</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- right side -->
+        <div class="max-w-[500px] order-1 lg:order-2 mx-auto ">
+            <img class="w-[300px] md:w-[400px] lg:w-full" src="images/Banner_image/banner-img.png" alt="">
+        </div>
+
+      </div>
+    </section>
+    <!-- banner end -->
+
+    <!-- services starts -->
+     <section class="mt-10 lg:mt-14">
+      <div>
+        <div class="text-center font-Montserrat">
+          <h3 class="uppercase text-[#5E6286] text-sm  font-bold">Category</h3>
+          <h1 class="text-[#13183E] text-2xl md:text-3xl lg:text-4xl font-bold  capitalize mt-3"> We offer best services</h1>
+        </div>
+      </div>
+      <!-- service + bg-background -->
+       <div class="relative">
+        <!-- first background -->
+        <div class="absolute hidden lg:block left-[340px] top-[180px] -z-30 bg-[#DD6951] w-24 h-24 rounded-tl-3xl rounded-br-xl">    
+        </div>
+
+        <!-- second background -->
+         <div class="absolute hidden lg:block left-[1150px] -z-10 bottom-[240px]">
+          <img src="images/services_image/effect.png" alt="">
+         </div>
+
+        <!-- services item -->
+      <div class=" mt-8 lg:mt-14 grid grid-cols-1 gap-4 md:gap-6 lg:gap-14 md:grid-cols-2 lg:grid-cols-4 mx-auto w-fit">
+        <!-- item 1 -->
+         <div class="max-w-60 rounded-xl  p-6">
+          <div class="text-center space-y-3 font-semibold flex flex-col relative">
+            <div class="mb-6">
+              <!-- under shape -->
+              <div class="absolute bg-[#e9b7ab]  w-10 h-10 left-20  bottom-[130px] rounded-br-2xl  rounded-tl-md object-cover -z-10"></div>
+              <img class="w-14 ml-12 -z-0" src="images/services_image/satellite-dish.png" alt="">
+            </div>
+            <div class="">
+              <h2 class="text-xl">Calculated Weather</h2>
+              <p>Built Wicket longer admire do barton vanity itself do in it.</p>
+            </div>
+          </div>
+          
+         </div>
+         <!-- item 2 -->
+         <div class="max-w-60 rounded-bl-[30px] rounded-xl  lg:drop-shadow-2xl p-6 bg-white -z-10">
+          <div class="text-center space-y-3 font-semibold flex flex-col relative">
+            <div class="mb-6">
+              <!-- under shape -->
+              <div class="absolute bg-[#e9b7ab]  w-10 h-10 left-16  bottom-[155px] rounded-bl-2xl  rounded-tr-xl object-cover -z-10"></div>
+              <img class="w-14 ml-16 -z-40" src="images/services_image/travelling.png" alt="">
+            </div>
+            <div class="">
+              <h2 class="text-xl">Calculated Weather</h2>
+              <p>Built Wicket longer admire do barton vanity itself do in it.</p>
+            </div>
+          </div>
+          
+         </div>
+         <!-- item 3 -->
+         <div class="max-w-60 rounded-xl   p-6">
+          <div class="text-center space-y-3 font-semibold flex flex-col relative">
+            <div class="mb-6">
+              <!-- under shape -->
+              <div class="absolute bg-[#e9b7ab]  w-10 h-10 left-20  bottom-[155px] rounded-bl-xl  rounded-tr-2xl object-cover -z-10"></div>
+              <img class="w-14 ml-14 -z-0" src="images/services_image/microphone.png" alt="">
+            </div>
+            <div class="">
+              <h2 class="text-xl">Calculated Weather</h2>
+              <p>Built Wicket longer admire do barton vanity itself do in it.</p>
+            </div>
+          </div>
+          
+         </div>
+         <!-- item 4 -->
+         <div class="-z-10 max-w-60 rounded-xl bg-white p-6">
+          <div class="text-center space-y-3 font-semibold flex flex-col relative">
+            <div class="mb-6">
+              <!-- under shape -->
+              <div class="absolute bg-[#E9B7AB]  w-10 h-10 left-20  bottom-[130px] rounded-bl-2xl  rounded-tr-xl object-cover -z-10"></div>
+              <img class="w-14 ml-12 -z-0" src="images/services_image/settings.png" alt="">
+            </div>
+            <div class="">
+              <h2 class="text-xl">Calculated Weather</h2>
+              <p>Built Wicket longer admire do barton vanity itself do in it.</p>
+            </div>
+          </div>
+          
+         </div>
+      </div>
+       </div>
+     </section>
+    <!-- services end -->
+
+    <!-- top destination starts -->
+     <section class="mt-12 md:mt-14 lg:mt-32">
+        <div>
+
+          <!-- upper part -->
+          <div class="text-center font-Montserrat">
+            <h3 class="uppercase text-[#5E6286] text-sm  font-bold">Top selling</h3>
+            <h1 class="text-[#13183E] text-2xl md:text-3xl lg:text-4xl font-bold  capitalize mt-3"> Top Destinations</h1>
+          </div>
+
+          <!-- lower part -->
+          <div class="mx-auto w-fit mt-8 lg:mt-12 grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-14">
+            <!-- item-1 -->
+            <div class="max-w-80 ">
+              <img class="w-[300px] h-[300px] mx-auto object-cover rounded-t-3xl" src="images/Destinations_image/rome.jpg" alt="rome">
+      
+              <div class="flex justify-between mx-6 mt-6 font-semibold text-lg text-[#606585] font-Montserrat">
+                <p>Rome, Italy</p>
+                <p>$5.42k</p>
+              </div>
+      
+              <div class="flex items-center gap-4 mx-6 mt-2">
+                <i class="fa-solid fa-location-arrow"></i>
+                <p class="font-semibold text-md text-[#606585] font-Montserrat">10 Days Trip</p>
+              </div>   
+            </div>
+            <!-- item-2 -->
+            <div class="max-w-80 ">
+              <img class="w-[300px] h-[300px] mx-auto object-cover rounded-t-3xl" src="images/Destinations_image/london.jpg" alt="london">
+      
+              <div class="flex justify-between mx-6 mt-6 font-semibold text-lg text-[#606585] font-Montserrat">
+                <p>london, UK</p>
+                <p>$10.6k</p>
+              </div>
+      
+              <div class="flex items-center gap-4 mx-6 mt-2">
+                <i class="fa-solid fa-location-arrow"></i>
+                <p class="font-semibold text-md text-[#606585] font-Montserrat">10 Days Trip</p>
+              </div>   
+            </div>
+            <!-- item-3 -->
+            <div class="max-w-80">
+              <img class="w-[300px] h-[300px] mx-auto object-cover rounded-t-3xl" src="images/Destinations_image/mosque.jpg" alt="mosque">
+      
+              <div class="flex justify-between mx-6 mt-6 font-semibold text-lg text-[#606585] font-Montserrat">
+                <p>Ozgomz, Turkey</p>
+                <p>$2.42k</p>
+              </div>
+      
+              <div class="flex items-center gap-4 mx-6 mt-2">
+                <i class="fa-solid fa-location-arrow"></i>
+                <p class="font-semibold text-md text-[#606585] font-Montserrat">10 Days Trip</p>
+              </div>   
+            </div>
+          </div>
+
+        </div>
+     </section>
+    <!-- top destination end -->
+
+    <!-- Book Next starts -->
+     <section class="mt-12 md:mt-14 lg:mt-32">
+      <div class="mx-1 lg:mx-28 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 lg:gap-6 ">
+        <!-- left side -->
+        <div>
+          <!-- upper part -->
+          <div class=" font-Montserrat text-center lg:text-left">
+            <h3 class="uppercase text-[#5E6286] text-sm  font-bold">Easy and Fast</h3>
+            <h1 class="text-[#13183E] text-2xl md:text-3xl lg:text-4xl font-bold  capitalize mt-3"> Book Your Next Trip <br> In 3 Easy Steps</h1>
+          </div>
+
+          <!-- lower part -->
+           <div class="mt-6 space-y-5">
+             <!-- item-1 -->
+             <div class="flex items-center gap-5">
+              <div>
+                <i class="fa-brands fa-squarespace bg-[#F0BB1F] text-xl px-4 py-3 rounded-lg text-white"></i>
+              </div>
+              <div class="text-[#4F5477]">
+                <h3 class="text-lg lg:text-xl font-bold">Choose Destination</h3>
+                <p class="text-sm lg:text-md font-semibold">Lorem ipsum dolor sit amet consectetur <br> adipisicing elit. Odio temporibus.</p>
+              </div>
+
+            </div>
+            <!-- item-2 -->
+            <div class="flex items-center gap-5">
+              <div>
+                <i class="fa-solid fa-money-bill-wheat bg-[#F15A2B] text-xl px-4 py-3 rounded-lg text-white"></i>
+              </div>
+              <div class="text-[#4F5477]">
+                <h3 class="text-lg lg:text-xl font-bold">Make Payment</h3>
+                <p class="text-sm lg:text-md font-semibold">Lorem ipsum dolor sit amet consectetur <br> adipisicing elit. Odio temporibus.</p>
+              </div>
+
+            </div>
+            <!-- item-3 -->
+            <div class="flex items-center gap-5">
+              <div>
+                <i class="fa-duotone fa-solid fa-car-on bg-[#006380] text-xl px-4 py-3 rounded-lg text-white"></i>
+              </div>
+              <div class="text-[#4F5477]">
+                <h3 class="text-lg lg:text-xl font-bold">Reach Airport on Selected Date</h3>
+                <p class="text-sm lg:text-md font-semibold">Lorem ipsum dolor sit amet consectetur <br> adipisicing elit. Odio temporibus.</p>
+              </div>
+
+            </div>
+           </div>
+        </div>
+
+        <!-- right side -->
+        <div class="  p-4 rounded-3xl drop-shadow-2xl">
+          <div class="relative w-[310px] lg:w-[360px] mx-autobg-white p-5 rounded-3xl">
+            <!-- flowing part -->
+             <div class="hidden lg:block">
+              <div class=" w-[250px] absolute top-[280px] left-[260px] flex gap-3  p-3 rounded-2xl  bg-white drop-shadow-2xl">
+                <img class="w-12 h-12  object-cover p-2 bg-teal-500 rounded-full" src="images/Book_image/al-aqsa-mosque.png" alt="mosque">
+  
+                <div>
+                    <p class="text-sm text-gray-600 font-semibold">Ongoing</p>
+                    <h3 class="text-xl font-semibold">Trip to Rome</h3>
+                    <p class="font-semibold"><span class="text-violet-700">40%</span> completed</p>
+                    <div class="relative w-40 h-1 bg-gray-500">
+                    <div class="absolute w-24 h-1 rounded-lg bg-violet-700">
+                    </div>
+                  </div>
+                </div>
+  
+               </div>
+             </div>
+
+            <img class="rounded-3xl w-[300px] lg:w-[350px] mx-auto" src="images/Book_image/pixabay.jpg" alt="">
+            <div class="space-y-3 mt-5">
+              <h3 class="text-xl font-semibold">Trip to Greece</h3>
+              <p class="text-[#5F6383] font-semibold font-Montserrat">14-29 June | Trip by Mehedi Hasan</p>
+              <div class="flex gap-4">
+                <i class="fa-solid fa-leaf text-lg bg-gray-400 px-3 py-2 rounded-full"></i>
+                <i class="fa-regular fa-map text-lg bg-gray-400 px-3 py-2 rounded-full"></i>
+                <i class="fa-solid fa-map-location-dot text-lg bg-gray-400 px-3 py-2 rounded-full"></i>
+              </div>
+             <div class="flex justify-between text-gray-600 font-semibold">
+                <div class=" flex items-center gap-3">
+                  <i class="fa-solid fa-building-user"></i>
+                  <p>24 people going</p>
+                </div>
+                <i class="fa-regular fa-heart text-xl"></i>
+             </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+      
+
+     </section>
+    <!-- Book Next end -->
+
+
+    <!-- testimonial starts -->
+     <section class="mt-12 md:mt-14 lg:mt-32">
+      <div class="container mx-auto p-4">
+        <div id="slider" class="flex flex-col py-8 lg:flex-row bg-white  rounded-lg overflow-hidden">
+
+          <!-- left side -->
+            <div class="w-full lg:w-1/2 p-6">
+              <div class=" font-Montserrat">
+                <h3 class="uppercase text-[#5E6286] text-sm  font-bold">Testimonials</h3>
+                <h1 class="text-[#13183E] text-2xl md:text-3xl lg:text-4xl font-bold  capitalize mt-3"> What people say about us</h1>
+              </div>
+
+              <div class="flex gap-5 mt-10">
+                <div class="slider-dot w-4 h-4 bg-teal-600 rounded-full cursor-pointer" onclick="showSlide(0)"></div>
+                <div class="slider-dot w-4 h-4 bg-rose-600 rounded-full cursor-pointer" onclick="showSlide(1)"></div>
+                <div class="slider-dot w-4 h-4 bg-gray-600 rounded-full cursor-pointer" onclick="showSlide(2)"></div>
+              </div>
+            </div>
+
+            <!-- right side -->
+            <div class="w-full h-[300px] lg:w-1/2 p-6 ">
+                <div id="slide-container font-Montserrat text-[#5A5F7F]" class="relative">
+
+                  <!-- item-1 -->
+                    <div class="slide opacity-0 absolute inset-0 transition-opacity duration-1000 ease-in-out">
+                      <div class="relative w-[300px] lg:w-[350px] mx-auto  p-7 drop-shadow-2xl bg-white">
+                        <img src="images/logo-2.png" alt="Image 1" class="rounded-full w-12 h-12 absolute -top-2  lg:-left-12">
+                        <div class="mt-4">
+                          <p class="mt-4 font-semibold text-lg">"On the Windows taking painted pasture yet its express parties use, Sure last upon he same as knew next of belived or diverted."</p>
+  
+                          <h1 class="text-xl font-bold mt-6 ">Mike Taylor</h1>
+                          <p class="font-semibold ">Lahore, Pakistan</p>
+                        
+                        </div>
+                      </div>
+                    </div>
+  
+                    <!-- item-2 -->
+                    <div class="slide opacity-0 absolute inset-0 transition-opacity duration-1000 ease-in-out">
+                      <div class="relative w-[300px] lg:w-[350px] mx-auto  p-7 drop-shadow-2xl bg-white">
+                        <img src="images/logo-2.png" alt="Image 1" class="rounded-full w-12 h-12 absolute -top-2  lg:-left-12">
+                        <div class="mt-4">
+                          <p class="mt-4 font-semibold text-lg">"I am absolutely thrilled with my experience on your website!  the design captivated me with its sleek and modern aesthetics."</p>
+  
+                          <h1 class="text-xl font-bold mt-6 ">Sara Hamid</h1>
+                          <p class="font-semibold ">Manchester, UK</p>
+                        
+                        </div>
+                      </div>
+                    </div>
+  
+                    <!-- item-3 -->
+                    <div class="slide opacity-0 absolute inset-0 transition-opacity duration-1000 ease-in-out ">
+                      <div class="relative w-[300px] lg:w-[350px] mx-auto  p-7 drop-shadow-2xl bg-white rounded-lg">
+                        <img src="images/logo-2.png" alt="Image 1" class="rounded-full w-12 h-12 absolute -top-2  lg:-left-12">
+                        <div class="mt-4">
+                          <p class="mt-4 font-semibold text-lg">"I especially appreciated the quick load times and responsive design, which made browsing on both my desktop and mobile devices an absolute pleasure."</p>
+  
+                          <h1 class="text-xl font-bold mt-6 ">Islam Machechev</h1>
+                          <p class="font-semibold ">Kazan, Russia</p>
+                        
+                        </div>
+                      </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+     </section>
+    <!-- testimonial end -->
+
+
+     <!-- Partners starts -->
+     <section class=" mt-12 md:mt-14 lg:mt-32">
+      <div class="flex gap-20 flex-wrap mx-auto justify-center w-fit flex-grow-1">
+        <img class="w-28" src="/images/Partners_image/Axon-logo.png" alt="Axon">
+        <img class="w-28" src="/images/Partners_image/jetstar-logo.png" alt="jetstar">
+        <img class="w-28  drop-shadow-none lg:drop-shadow-2xl bg-white inline-block" src="/images/Partners_image/expedia-logo.png" alt="expedia">
+        <img class="w-28" src="/images/Partners_image/qantas-logo.png" alt="qantas">
+        <img class="w-28" src="/images/Partners_image/Alitalia-logo.png" alt="Alitalia">
+      </div>
+     </section>
+    <!-- Partners ends -->
+
+    <!-- Subscribe starts -->
+     <section class=" mt-12 md:mt-14 lg:mt-32">
+      <div class="bg-[#F8F7FD] rounded-tl-[50px] rounded-tr-xl py-10 lg:py-14 relative mx-5 lg:mx-10">
+
+        <h1 class="text-xl lg:text-3xl font-semibold text-center max-w-2xl mx-auto text-[#7d809e]">Subscribe to get information, latest news and other interesting offers about jadoo</h1>
+        <div class="flex">
+          <div class="flex gap-2 relative w-[350px] lg:w-[400px] mx-auto mt-10 p-2 lg:p-1">
+            <i id="email-icon" class="fas fa-envelope text-xl absolute left-3 top-1/2 transform -translate-y-1/2 pointer-events-none"></i>
+            <input type="email" id="email-input" placeholder="Your email" 
+                   class="pl-10 border  rounded-md p-3 w-full  outline-none text-md text-black focus:placeholder-transparent"
+                   onfocus="hideIcon()" onblur="showIcon()">
+            <button class="bg-[#FF866A] text-white text-sm px-6 rounded-lg">Subscribe</button>
+          </div>
+        </div>
+
+        <!-- floating part -->
+        <div class=" absolute -right-2 lg:-right-6 bottom-60 lg:bottom-">
+          <img class="w-10 lg:w-14" src="/images/Subscribe_image/navigator.png" alt="navigator">
+        </div>
+
+      </div>
+     </section>
+    <!-- Subscribe end -->
+
+    <!-- Footer starts -->
+    <section class=" mt-12 md:mt-14 lg:mt-32 mb-10">
+     <div>
+      <!-- upper part -->
+      <div class="mx-24 flex gap-4 justify-evenly flex-col md:flex-row lg:flex-row">
+        <!-- item-1 -->
+        <div>
+          <img class="w-14" src="/images/logo.png" alt="logo">
+            <p class="font-semibold text-[#5D6181]">Book your trip in minute, get full <br> control for much longer.</p>
+        </div>
+        <!-- item-2 -->
+         <div class="flex flex-col lg:flex-row gap-4 lg:gap-10 font-Montserrat">
+          <!-- 1 -->
+          <div>
+            <h2 class="text-xl font-bold">Company</h2>
+            <div class="flex flex-col text-[#5D6181] font-semibold text-sm mt-3">
+              <a href="#">About</a>
+              <a href="#">Carrer</a>
+              <a href="#">Mobile</a>
+            </div>
+          </div>
+  
+          <!-- 2 -->
+          <div>
+            <h2 class="text-xl font-bold">Contact</h2>
+            <div class="flex flex-col text-[#5D6181] font-semibold text-sm mt-3">
+              <a href="#">Help/FAQ</a>
+              <a href="#">Press</a>
+              <a href="#">Affilates</a>
+            </div>
+          </div>
+  
+          <!-- 3 -->
+          <div>
+            <h2 class="text-xl  font-bold">More</h2>
+            <div class="flex flex-col text-[#5D6181] font-semibold text-sm mt-3">
+                <a href="#">Airlinefees</a>
+                <a href="#">Airline</a>
+                <a href="#">Loe fare trips</a>
+            </div>
+          </div>
+  
+         </div>
+        <!-- item-3 -->
+         <div>
+            <img class="w-12 inline-block drop-shadow-lg bg-white rounded-full p-2" src="/images/Footer_image/facebook.png" alt="facebook">
+            <img class="w-12 inline-block drop-shadow-lg bg-white rounded-full p-2" src="/images/Footer_image/instagram.png" alt="instagram">
+            <img class="w-12 inline-block drop-shadow-lg bg-white rounded-full p-2" src="/images/Footer_image/twitter.png" alt="twitter">
+         </div>
+  
+       </div>
+
+       <!-- lower part -->
+        <div class="text-center font-semibold text-sm font-Montserrat text-gray-700 mt-10">
+          <p>All Rights Reserved@Mehedi.com.bd</p>
+        </div>
+     </div>
+    </section>
+    <!-- Footer ends -->
+
+
+
+
+    <script src="script.js"></script>
+  </body>
+</html>
